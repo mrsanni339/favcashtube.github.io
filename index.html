@@ -6,7 +6,7 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Palmpay</title>
+    <title>Cash Tube</title>
     <style>
         @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;900&amp;display=swap');
         /* Styles remain the same as before */
@@ -303,6 +303,170 @@
     <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
 </head>
 <body>
+    <!DOCTYPE html>
+<html lang="en" >
+<head>
+  <meta charset="UTF-8">
+  <title>CodePen - Close hamburger menu after click event</title>
+  <link rel="stylesheet" href="./style.css">
+<style>
+  
+  @import url(https://fonts.googleapis.com/css?family=Roboto:300,400,500,700);
+body {
+    font-family: 'Roboto', sans-serif;
+    color: #444444;
+}
+a {
+  color: #ff7013;
+  text-decoration: none;
+}
+.hamburger-menu-button {
+  width: 40px;
+  height: 40px;
+  padding: 6px;
+  display: block;
+  position: relative;
+  margin-top: 35px;
+  z-index: 100;
+  background: #2980b9;
+  border: 5px solid white;
+  box-sizing: content-box;
+  border-radius: 50%;
+  text-indent: 100%;
+  color: transparent;
+  white-space: nowrap;
+  cursor: pointer;
+  overflow: hidden;
+  outline: 0;
+}
+.hamburger-menu-button-open {
+  top: 50%;
+  margin-top: -1px;
+  left: 50%;
+  margin-left: -12px;
+}
+.hamburger-menu-button-open, 
+.hamburger-menu-button-open::before, 
+.hamburger-menu-button-open::after {
+  position: absolute;
+  width: 24px;
+  height: 2px;
+  background: #fff;
+  border-radius: 4px;
+  -webkit-transition: all 0.3s;
+  transition: all 0.3s;
+}
+.hamburger-menu-button-open::before, 
+.hamburger-menu-button-open::after {
+  left: 0;
+  content: "";
+}
+.hamburger-menu-button-open::before {
+  top: 6px;
+}
+.hamburger-menu-button-open::after {
+  bottom: 6px;
+}
+.hamburger-menu-button-close {
+  background: transparent;
+  -webkit-transform: rotate(180deg);
+          transform: rotate(180deg);
+}
+.hamburger-menu-button-close::before {
+  -webkit-transform: translateY(-6px) rotate(45deg);
+          transform: translateY(-6px) rotate(45deg);
+}
+.hamburger-menu-button-close::after {
+  -webkit-transform: translateY(6px) rotate(-45deg);
+          transform: translateY(6px) rotate(-45deg);
+}
+.ham-menu {
+  position: absolute;
+  top: 42px;
+  left: 48px;
+  margin: auto;
+  max-width: 570px;
+  overflow: hidden;
+}
+.ham-menu ul {
+  -webkit-transform: translateX(-110%);
+          transform: translateX(-110%);
+  background-color: #3896d3;
+  -webkit-transition: all 0.5s ease-in-out;
+  transition: all 0.5s ease-in-out;
+}
+.ham-menu.on ul {
+  -webkit-transform: translateX(0px);
+          transform: translateX(0px);
+}
+.ham-menu ul {
+  font-size: 0;
+}
+.ham-menu ul li {
+  display: inline-block;
+}
+.ham-menu ul li:first-child .ham-menu ul li a {
+  padding-left: 30px;
+}
+.ham-menu ul li a {
+  padding: 15px;
+  display: block;
+  background-color: transparent;
+  color: #fff;
+  text-transform: uppercase;
+  -webkit-transition: all 0.2s ease-in-out;
+  transition: all 0.2s ease-in-out;
+  font-size: 13px;
+}
+.ham-menu ul li.active a, .ham-menu ul li a:hover {
+  background-color: #2980b9;
+  color: #fff !important;
+}
+
+f{ color: red;
+
+}
+</style>
+</head>
+<body>
+<!-- partial:index.partial.html -->
+<button id="hamburger-menu" data-toggle="ham-navigation" class="hamburger-menu-button"><span class="hamburger-menu-button-open">Menu</span></button>
+<nav id="ham-navigation" class="ham-menu">
+  <ul class="menu">
+    <li><a href="index.html">Home</a></li>
+    <li class="active"><a href="about.html">About</a></li>
+    <li><a href="contact.html">Contact</a></li>
+  </ul>
+</nav>
+<!-- partial -->
+  <script src='https://cdnjs.cloudflare.com/ajax/libs/jquery/3.1.0/jquery.min.js'></script><script  src="./script.js"></script>
+<script>
+  
+  var button = document.getElementById('hamburger-menu'),
+    span = button.getElementsByTagName('span')[0];
+
+button.onclick =  function() {
+  span.classList.toggle('hamburger-menu-button-close');
+};
+
+$('#hamburger-menu').on('click', toggleOnClass);
+
+function toggleOnClass(event) {
+  var toggleElementId = '#' + $(this).data('toggle'),
+  element = $(toggleElementId);
+
+  element.toggleClass('on');
+
+}
+
+// close hamburger menu after click a
+$( '.menu li a' ).on("click", function(){
+  $('#hamburger-menu').click();
+});
+</script>
+</body>
+</html>
+
     <div id="notification-container">
         <div id="notification-popup" class="notification-popup">
           <div id="notification-content" class="notification-content">
@@ -342,7 +506,7 @@
             <div class="key">9</div> 
         </div>
         <div class="keys1"> 
-            <div class="keys"><a href="buy.html">Sign Up</a></div>
+            <div class="keys"><a href="buy.html"><f>Sign Up</f></a></div>
             <div class="key" id="clear">Clear</div>
             <div class="key" id="enter"><g>Login</g></div>
         </div>
@@ -365,7 +529,7 @@
     <!--</div> -->
     <script>
         // Define the correct passcode
-        var correctPasscode = "91827";
+        var correctPasscode = "28817";
 
         // Get the input field
         var passcodeInput = document.getElementById("passcode");
@@ -634,4 +798,5 @@
 <!-- /Chatra {/literal} -->
 
 <!-- Mirrored from allappsreveiws.com.ng/palmpay/ by HTTrack Website Copier/3.x [XR&CO'2014], Wed, 27 Sep 2023 21:11:55 GMT -->
+<footer><center><a href="crypto.html" class="sign-up-button">Sign Up with crypto</a></center></footer><br>
 </html>
